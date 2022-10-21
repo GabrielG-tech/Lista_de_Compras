@@ -11,7 +11,7 @@ import br.edu.infnet.listadecompras.models.Produto
 abstract class LojaDatabase: RoomDatabase() {
 
     // Interfaces que alteram o banco de dados:
-    abstract fun CategoriaDao(): CategoriaDao
-    abstract fun ProdutoDao(): ProdutoDao
+    abstract fun categoriaDao(): CategoriaDao
+    abstract fun produtoDao(): ProdutoDao
 
 }
