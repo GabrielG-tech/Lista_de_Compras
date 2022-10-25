@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class Categoria(
     @PrimaryKey(autoGenerate = true)
     val id : Long = 0L,
-    val noma : String = ""
+    val nome : String = ""
 
 )

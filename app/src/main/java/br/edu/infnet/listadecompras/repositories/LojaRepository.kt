@@ -36,4 +36,8 @@ class LojaRepository private constructor(context: Context) {
         database.categoriaDao().insert(categoria)
     }
 
+    fun getCategoriaById(id: Long) : Categoria{
+        return database.categoriaDao().getById(id)
+    }
+
 }
