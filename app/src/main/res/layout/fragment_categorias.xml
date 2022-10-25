@@ -19,7 +19,7 @@
                 android:id="@+id/input_nome_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nome da Categoria" />
+                android:hint="@string/nome_da_categoria" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -27,13 +27,13 @@
             android:id="@+id/tv_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Categoria" />
+            android:text="@string/categoria" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salvar" />
+            android:text="@string/salvar" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:id="@+id/input_nome_id_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Id da Categoria" />
+                android:hint="@string/id_da_categoria" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,7 +51,13 @@
             android:id="@+id/btn_get_by_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Consultar pelo id" />
+            android:text="@string/consultar_pelo_id" />
+
+        <Button
+            android:id="@+id/btn_remove_by_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remover_pelo_id" />
 
     </LinearLayout>
 

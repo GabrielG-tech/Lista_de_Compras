@@ -48,7 +48,16 @@ class CategoriasFragment : Fragment() {
             btnGetById.setOnClickListener {
                 onGetByIdClick()
             }
+
+            btnRemoveById.setOnClickListener {
+                onRemoveByIdClick()
+            }
         }
+    }
+
+    private fun onRemoveByIdClick() {
+        val idInput = binding.inputNomeIdCategoria.text.toString().toLong()
+        viewModel.deleteCategoriaById(idInput)
     }
 
     private fun onGetByIdClick() {

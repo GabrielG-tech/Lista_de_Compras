@@ -40,4 +40,7 @@ class LojaRepository private constructor(context: Context) {
         return database.categoriaDao().getById(id)
     }
 
+    fun deleteCategoria(categoria: Categoria) {
+        database.categoriaDao().delete(categoria)
+    }
 }

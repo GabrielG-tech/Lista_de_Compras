@@ -25,4 +25,10 @@ class MainViewModel: ViewModel() {
         return categoria.await()
     }
 
+    fun deleteCategoriaById(id: Long) {
+        viewModelScope.launch(Dispatchers.IO){
+            repositorio.deleteCategoria(Categoria(id = id))
+        }
+    }
+
 }

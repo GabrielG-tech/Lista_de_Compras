@@ -4,4 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="categorias">Categorias</string>
     <string name="produtos">Produtos</string>
+    <string name="categoria">Categoria</string>
+    <string name="salvar">Salvar</string>
+    <string name="id_da_categoria">Id da Categoria</string>
+    <string name="nome_da_categoria">Nome da Categoria</string>
+    <string name="consultar_pelo_id">Consultar pelo id</string>
+    <string name="remover_pelo_id">Remover pelo id</string>
 </resources>
