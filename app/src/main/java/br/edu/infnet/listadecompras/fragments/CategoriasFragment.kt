@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import br.edu.infnet.listadecompras.R
 import br.edu.infnet.listadecompras.databinding.FragmentCategoriasBinding
 import br.edu.infnet.listadecompras.models.Categoria
 import br.edu.infnet.listadecompras.viewmodel.MainViewModel
+import kotlinx.coroutines.launch
 
 
 class CategoriasFragment : Fragment() {
@@ -40,8 +42,20 @@ class CategoriasFragment : Fragment() {
     private fun setupClickListeners() {
         binding.apply{
             btnSave.setOnClickListener {
-
+                onSaveClick()
             }
+
+            btnGetById.setOnClickListener {
+                onGetByIdClick()
+            }
+        }
+    }
+
+    private fun onGetByIdClick() {
+        val idInput = binding.inputNomeIdCategoria.text.toString().toLong()
+        lifecycleScope.launch {
+            val categoria = viewModel.getCategoriaById(idInput)
+            binding.tvCategoria.text = categoria.nome
         }
     }
 
