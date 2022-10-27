@@ -49,7 +49,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nome_produto_id"
+                android:id="@+id/input_nome_id_produto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/id_do_produto" />
@@ -57,13 +57,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_get_by_produto_id"
+            android:id="@+id/btn_get_by_id_produto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/consultar_pelo_id" />
 
         <Button
-            android:id="@+id/btn_remove_by_produto_id"
+            android:id="@+id/btn_remove_by_id_produto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/remover_pelo_id" />
@@ -84,13 +84,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_get_by_categoria_id"
+            android:id="@+id/btn_get_by_id_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/consultar_pelo_id" />
 
         <Button
-            android:id="@+id/btn_remove_by_categoria_id"
+            android:id="@+id/btn_remove_by_id_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/remover_pelo_id" />
