@@ -11,4 +11,6 @@
     <string name="consultar_pelo_id">Consultar pelo id</string>
     <string name="remover_pelo_id">Remover pelo id</string>
     <string name="id_do_produto">Id do Produto</string>
+    <string name="nome_do_produto">Nome do Produto</string>
+    <string name="produto">Produto</string>
 </resources>
