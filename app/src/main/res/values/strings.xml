@@ -10,4 +10,5 @@
     <string name="nome_da_categoria">Nome da Categoria</string>
     <string name="consultar_pelo_id">Consultar pelo id</string>
     <string name="remover_pelo_id">Remover pelo id</string>
+    <string name="id_do_produto">Id do Produto</string>
 </resources>
