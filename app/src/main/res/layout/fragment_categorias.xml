@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.CategoriasFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -68,6 +71,57 @@
             android:layout_height="wrap_content"
             android:text="@string/remover_pelo_id" />
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_id_categoria_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Id da Categoria Atualizada" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_nome_categoria_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome da Categoria Atualizada" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atualizar" />
+
+        <Button
+            android:id="@+id/btn_list_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar Todos" />
+
+        <TextView
+            android:id="@+id/tv_all_categorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Esperando..." />
+
+
     </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

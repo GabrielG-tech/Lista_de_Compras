@@ -6,95 +6,151 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProdutosFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_margin="16dp"
-        >
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nome_produto"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/nome_do_produto"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nome_produto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome do Produto"/>
 
-        <TextView
-            android:id="@+id/tv_categoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:layout_margin="8dp"
-            android:text="@string/produto" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/salvar" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="32dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nome_id_produto"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/id_do_produto" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_id_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Id da Categoria"/>
 
-        <Button
-            android:id="@+id/btn_get_by_id_produto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/consultar_pelo_id" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_remove_by_id_produto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/remover_pelo_id" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="32dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nome_id_categoria"
+            <Button
+                android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/id_da_categoria" />
+                android:text="@string/salvar" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <Button
-            android:id="@+id/btn_get_by_id_categoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/consultar_pelo_id" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nome_id_produto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Id do Produto" />
 
-        <Button
-            android:id="@+id/btn_remove_by_id_categoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/remover_pelo_id" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_produto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="2dp"
+                android:layout_margin="4dp"
+                android:text="Produto" />
+
+            <Button
+                android:id="@+id/btn_get_by_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/consultar_pelo_id" />
+
+            <Button
+                android:id="@+id/btn_remove_by_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/remover_pelo_id" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_id_produto_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Id do Produto Atualizada" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nome_produto_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome do Produto Atualizada" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_id_categoria_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Id da Categoria Atualizada"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atualizar" />
+
+            <Button
+                android:id="@+id/btn_list_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Listar Todos" />
+
+            <TextView
+                android:id="@+id/tv_all_produtos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Esperando..." />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import br.edu.infnet.listadecompras.R
 import br.edu.infnet.listadecompras.databinding.FragmentProdutosBinding
-import br.edu.infnet.listadecompras.models.Categoria
+import br.edu.infnet.listadecompras.models.Produto
 import br.edu.infnet.listadecompras.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
@@ -44,64 +43,63 @@ class ProdutosFragment : Fragment() {
                 onSaveClick()
             }
 
-            btnGetByIdProduto.setOnClickListener {
+            btnGetById.setOnClickListener {
                 onGetByIdClick()
             }
 
-            btnRemoveByIdProduto.setOnClickListener {
+            btnRemoveById.setOnClickListener {
                 onRemoveByIdClick()
             }
 
-            btnGetByIdCategoria.setOnClickListener {
-                onGetByIdClick()
+            btnUpdate.setOnClickListener {
+                onUpdateClick()
             }
 
-            btnRemoveByIdCategoria.setOnClickListener {
-                onRemoveByIdClick()
+            btnListAll.setOnClickListener {
+                onListClick()
             }
 
+
+
         }
     }
 
-    private fun onRemoveByProductIdClick() {
-        val idInput = binding.inputNomeIdProduto.text.toString().toLong()
-        viewModel.deleteCategoriaById(idInput)
+    private fun onListClick() {
+        lifecycleScope.launch {
+            val texto = viewModel.getAllProdutosString()
+            binding.tvAllProdutos.text = texto
+        }
     }
 
-    private fun onGetByProductIdClick() {
+    private fun onUpdateClick() {
+        val idInput = binding.inputIdProdutoUpdate.text.toString().toLong()
+        val nomeInput = binding.inputNomeProdutoUpdate.text.toString()
+        val categoriaIdInput = binding.inputIdCategoriaUpdate.text.toString().toLong()
+        val produto = Produto(id = idInput, nome = nomeInput, categoriaId = categoriaIdInput)
+        viewModel.updateProduto(produto)
+    }
+
+    private fun onRemoveByIdClick() {
+        val idInput = binding.inputNomeIdProduto.text.toString().toLong()
+        viewModel.deleteProdutoById(idInput)
+    }
+
+    private fun onGetByIdClick() {
         val idInput = binding.inputNomeIdProduto.text.toString().toLong()
         lifecycleScope.launch {
-            val categoria = viewModel.getCategoriaById(idInput)
-            binding.tvCategoria.text = categoria.nome
+            val produto = viewModel.getProdutoById(idInput)
+            binding.tvProduto.text = produto.nome
         }
     }
 
-    fun onSaveProductClick() {
+    fun onSaveClick() {
         val nomeInput = binding.inputNomeProduto.text.toString()
-        viewModel.insertCategoria(Categoria(nome = nomeInput))
-    }
-
-    private fun onRemoveByCategoryIdClick() {
-        val idInput = binding.inputNomeIdProduto.text.toString().toLong()
-        viewModel.deleteCategoriaById(idInput)
-    }
-
-    private fun onGetByCategoryIdClick() {
-        val idInput = binding.inputNomeIdProduto.text.toString().toLong()
-        lifecycleScope.launch {
-            val categoria = viewModel.getCategoriaById(idInput)
-            binding.tvCategoria.text = categoria.nome
-        }
-    }
-
-    fun onSaveCategoryClick() {
-        val nomeInput = binding.inputNomeProduto.text.toString()
-        viewModel.insertCategoria(Categoria(nome = nomeInput))
+        val categoriaIdInput = binding.inputIdCategoria.text.toString().toLong()
+        viewModel.insertProduto(Produto(nome = nomeInput, categoriaId = categoriaIdInput))
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    
 }

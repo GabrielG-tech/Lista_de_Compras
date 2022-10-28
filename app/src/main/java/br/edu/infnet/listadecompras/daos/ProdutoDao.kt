@@ -33,6 +33,6 @@ interface ProdutoDao {
     fun getAll(): List<Produto>
 
     @Query("SELECT * FROM Produto WHERE categoriaId = :id")
-    fun getProdutosBrCategoriaId(id: Long) : List<Produto>
+    fun getProdutosByCategoriaId(id: Long) : List<Produto>
 
 }

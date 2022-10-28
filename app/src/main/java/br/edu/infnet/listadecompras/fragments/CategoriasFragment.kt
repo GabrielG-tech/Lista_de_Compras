@@ -52,7 +52,30 @@ class CategoriasFragment : Fragment() {
             btnRemoveById.setOnClickListener {
                 onRemoveByIdClick()
             }
+
+            btnUpdate.setOnClickListener {
+                onUpdateClick()
+            }
+
+            btnListAll.setOnClickListener {
+                onListClick()
+            }
+
         }
+    }
+
+    private fun onListClick() {
+        lifecycleScope.launch {
+            val texto = viewModel.getAllCategoriasString()
+            binding.tvAllCategorias.text = texto
+        }
+    }
+
+    private fun onUpdateClick() {
+        val idInput = binding.inputIdCategoriaUpdate.text.toString().toLong()
+        val nomeInput = binding.inputNomeCategoriaUpdate.text.toString()
+        val categoria = Categoria(id = idInput, nome = nomeInput)
+        viewModel.updateCategoria(categoria)
     }
 
     private fun onRemoveByIdClick() {
